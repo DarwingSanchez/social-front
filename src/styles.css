@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Gudea:wght@400;700&display=swap');
+
+
+/* Global variables */
+:root {
+  --background-blue: #16202a;
+  --font-color-yellow: #f9fd6d;
+  --font-color-blue: #16202a;
+  --font-color-grey: #949494;
+  --grey: #d9d9d9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Gudea', sans-serif;
+  background-color: #16202a;
+}
+
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 0rem 2rem 0rem;
+  width: 100vw;
+  max-width: 120rem;
+}
