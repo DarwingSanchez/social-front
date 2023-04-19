@@ -1,1 +1,19 @@
-<p>create-message works!</p>
+<section class="main-container">
+  <h1 class="title">Create message</h1>
+  <form #messageCard="ngForm" (ngSubmit)="onCreate()" class="login-form">
+    <div class="input-container">
+      <label for="title">Email address</label>
+      <input class="basic-style" type="title" name="title" placeholder="Talk about me" required [(ngModel)]="messageRender.titleMessage">
+    </div>
+    <div class="input-container">
+      <label for="message">Email address</label>
+      <textarea class="basic-style" name="message" cols="40" rows="5"
+        placeholder="Create a message for share with friends. Max. 700 chars" required maxlength="700" [(ngModel)]="messageRender.message"></textarea>
+    </div>
+    <button type="submit" class="basic-style login-btn">Share</button>
+  </form>
+
+  <!-- Message container -->
+  <app-message [cardInfo]="messageRender" *ngIf="messageRender.titleMessage || messageRender.message"></app-message>
+
+</section>

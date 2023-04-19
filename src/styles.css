@@ -8,7 +8,7 @@
   --font-color-yellow: #f9fd6d;
   --font-color-blue: #16202a;
   --font-color-grey: #949494;
-  --grey: #d9d9d9;
+  --grey: #f7f7f7;
 }
 
 * {
@@ -25,9 +25,6 @@ html {
 
 
 .main {
-  display: flex;
-  justify-content: center;
-  padding: 0rem 2rem 0rem;
   width: 100vw;
   max-width: 120rem;
 }

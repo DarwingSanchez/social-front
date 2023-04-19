@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-message',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent {
+
+  @Input() cardInfo: any;
 
 }

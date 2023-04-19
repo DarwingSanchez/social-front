@@ -1,3 +1,40 @@
-<header>
+<header class="principal-header" *ngIf="isLoggedIn else notLoggedIn">
+  <img src="./assets/images/logo.png" alt="logo">
+  <div class="small-menus">
+    <img src="./assets/icons/chatbox-ellipses.svg" alt="chat button">
+    <div [class.menu-principal-opened]="onPrincipalMenu">
+      <img (click)="onOpenPrincipalMenu()" src="./assets/icons/menu.svg" alt="menu icon">
+    </div>
+  </div>
+
+  <div class="menu" *ngIf="onPrincipalMenu">
+    <h3>Daniel Amadeus</h3>
+    <div class="menu-option" (click)="onRouter('/create-message')">
+      <img src="./assets/icons/create.svg" alt="create icon">
+      <p>Create Messages</p>
+    </div>
+    <div (click)="onRouter('/my-messages')" class="menu-option">
+      <img src="./assets/icons/send.svg" alt="create icon">
+      <p>My Messages</p>
+    </div>
+    <div (click)="onRouter('/home')" class="menu-option">
+      <img src="./assets/icons/chatbubbles-sharp.svg" alt="create icon">
+      <p>See all messages</p>
+    </div>
+    <div class="menu-option" (click)="logout()">
+      <img src="./assets/icons/log-in-sharp.svg" alt="create icon">
+      <p>Logout</p>
+    </div>
+  </div>
 
 </header>
+
+<ng-template #notLoggedIn>
+  <header class="secundary-header">
+    <img src="./assets/images/logo.png" alt="logo">
+  </header>
+  <h2 class="welcome-title">Welcome To Wires</h2>
+</ng-template>
+
+
+<ng-template></ng-template>

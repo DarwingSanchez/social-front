@@ -1,1 +1,35 @@
-<p>login works!</p>
+<section class="main-container">
+  <button class="basic-style sign-button" routerLink="/sign-up">Sign in</button>
+  <form [formGroup]="formGroup" (ngSubmit)="onLogin()" class="login-form">
+    <div class="input-container">
+      <label for="email">Email address</label>
+      <input
+        class="basic-style"
+        type="email"
+        name="email"
+        placeholder="Example@gmail.com"
+        oninput="this.value = this.value.toLowerCase()"
+        required
+        autocomplete="email"
+        formControlName="email"
+      >
+    </div>
+    <div class="input-container">
+      <label for="password">Password</label>
+      <div class="basic-style input-pass-container">
+        <input
+          class="customized-style-input"
+          [type]="showPassword ? 'text' : 'password'"
+          name="password"
+          placeholder="Your password"
+          required
+          autocomplete="password"
+          formControlName="password"
+        >
+        <img (click)="onShowPassword()" src="./assets/icons/eye.svg" alt="eye icon">
+      </div>
+    </div>
+    <button type="submit" class="basic-style login-btn">Sign In</button>
+  </form>
+  <p class="wrong-text" *ngIf="invalid">Something went wrong</p>
+</section>

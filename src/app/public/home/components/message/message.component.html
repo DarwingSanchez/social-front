@@ -1,1 +1,8 @@
-<p>message works!</p>
+<section class="card-container">
+  <h3>{{cardInfo.titleMessage}}</h3>
+  <p>{{cardInfo.message}}</p>
+  <div class="card-footer">
+    <p class="date">{{cardInfo.createdAt | formatDate}}</p>
+    <p class="name">{{cardInfo.creator.fullUserName}}</p>
+  </div>
+</section>

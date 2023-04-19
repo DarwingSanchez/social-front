@@ -1,1 +1,25 @@
-<p>my-messages works!</p>
+<section class="main-container">
+  <h1 class="title">All Messages</h1>
+  <div class="search-main-container">
+    <div class="search-container">
+      <p>Date select</p>
+      <div class="search-box">
+        <input
+          type="datetime-local"
+          [(ngModel)]="dateGiven"
+          placeholder="Date"
+          (input)="onGetMessages()"
+        >
+      </div>
+    </div>
+  </div>
+  <!-- Messages container -->
+  <div class="messages-main-container" *ngIf="messagesList.length > 0 else noMessages">
+    <app-message *ngFor="let item of messagesList" [cardInfo]="item"></app-message>
+  </div>
+</section>
+
+<ng-template #noMessages>
+  <p class="text-no-have">We don't have messages yet</p>
+</ng-template>
+
